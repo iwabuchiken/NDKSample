@@ -1,0 +1,12 @@
+
+javah -o jni/ndksample.hpp -classpath bin/classes ndk.main.MainActv
+
+# REF multiple jar files http://stackoverflow.com/questions/219585/setting-multiple-jars-in-java-classpath answered Oct 20 '08 at 20:32
+javah -o jni/ndksample.hpp -classpath "bin/classes;C:\WORKS\Programs\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-10\*" ndk.main.MainActv
+
+# external tools config
+${env_var:JAVA_HOME}\bin\java.h
+
+// args
+-d jni -classpath bin/classes ${java_type_name}
+-d jni -classpath "bin/classes;C:\WORKS\Programs\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-10\*" ${java_type_name}
