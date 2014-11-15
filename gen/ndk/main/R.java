@@ -10,20 +10,47 @@ package ndk.main;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        /**  REF color names http://www.workwithcolor.com/color-chart-full-01.htm 
+         */
+        public static final int Arsenic=0x7f04000b;
+        public static final int black=0x7f040001;
+        public static final int blue1=0x7f040002;
+        public static final int darkgreen=0x7f040003;
+        public static final int darkolivegreen4=0x7f040005;
+        public static final int gold2=0x7f040007;
+        /**  /main.xml 
+         */
+        public static final int gray1=0x7f04000a;
+        public static final int green4=0x7f040004;
+        public static final int purple4=0x7f040006;
+        public static final int red=0x7f040008;
+        /**  Source=http://www.somacon.com/p142.php 
+ main.xml 
+         */
+        public static final int white=0x7f040000;
+        public static final int yello=0x7f040009;
+        /**  TwtActv::Timeline::background 
+         */
+        public static final int yellow_bright=0x7f04000c;
+        public static final int yellow_dark=0x7f04000d;
+        public static final int yellow_pale_bright=0x7f04000f;
+        public static final int yellow_pale_dark=0x7f04000e;
+    }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int actv_main_bt_1=0x7f060000;
-        public static final int actv_main_bt_2=0x7f060002;
-        public static final int actv_main_tv_1=0x7f060001;
-        public static final int actv_main_tv_2=0x7f060003;
+        public static final int actv_main_bt_1=0x7f070000;
+        public static final int actv_main_bt_2=0x7f070002;
+        public static final int actv_main_tv_1=0x7f070001;
+        public static final int actv_main_tv_2=0x7f070003;
     }
     public static final class layout {
         public static final int actv_main=0x7f030000;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
+        public static final int app_name=0x7f050000;
     }
     public static final class style {
         /** 
@@ -36,10 +63,10 @@ public final class R {
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }

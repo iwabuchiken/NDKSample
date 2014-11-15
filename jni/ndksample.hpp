@@ -59,6 +59,14 @@ JNIEXPORT jstring JNICALL Java_ndk_main_MainActv_msgFromNDK
 JNIEXPORT jint JNICALL Java_ndk_main_MainActv_get_1Number
   (JNIEnv *, jobject);
 
+/*
+ * Class:     ndk_main_MainActv
+ * Method:    add_Array
+ * Signature: ([I)[I
+ */
+JNIEXPORT jintArray JNICALL Java_ndk_main_MainActv_add_1Array
+  (JNIEnv *, jobject, jintArray);
+
 #ifdef __cplusplus
 }
 #endif

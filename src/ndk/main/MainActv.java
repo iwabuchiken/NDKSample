@@ -41,6 +41,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.nio.channels.FileChannel;
 
+import ndk.utils.Methods;
+
 public class MainActv extends Activity  implements OnClickListener {
 	
 	public static Vibrator vib;
@@ -59,6 +61,8 @@ public class MainActv extends Activity  implements OnClickListener {
     public native String msgFromNDK(int count);
 	
     public native int get_Number();
+    
+    public native int[] add_Array(int[] source);
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -269,7 +273,101 @@ public class MainActv extends Activity  implements OnClickListener {
 	_test() {
 		// TODO Auto-generated method stub
 	
+		String msg_Log;
 		
+		int iterate = 1000000;
+
+		////////////////////////////////
+
+		// native
+
+		////////////////////////////////
+		// Log
+		msg_Log = "*********** native => starts: " + iterate;
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		////////////////////////////////
+
+		// setup
+
+		////////////////////////////////
+		// Log
+		msg_Log = "start => " 
+					+ Methods.conv_MillSec_to_TimeLabel(Methods.getMillSeconds_now());
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		int[] i_ary = {2,3,4,5};
+		int[] i_ary_done = null;
+		
+		for (int i = 0; i < iterate; i++) {
+			
+			i_ary_done = add_Array(i_ary);
+			
+		}
+		
+		msg_Log = "end => " 
+				+ Methods.conv_MillSec_to_TimeLabel(Methods.getMillSeconds_now());
+	
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		// Log
+		msg_Log = "i_ary_done[0] => " + i_ary_done[0];
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		////////////////////////////////
+		
+		// java
+		
+		////////////////////////////////
+		// Log
+		msg_Log = "*********** java => starts: " + iterate;
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		////////////////////////////////
+		
+		// setup
+		
+		////////////////////////////////
+		// Log
+		msg_Log = "start => " 
+				+ Methods.conv_MillSec_to_TimeLabel(Methods.getMillSeconds_now());
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+//		i_ary = {2,3,4,5};
+		i_ary_done = null;
+		
+		for (int i = 0; i < iterate; i++) {
+			
+			i_ary_done = add_Array_java(i_ary);
+			
+		}
+		
+		msg_Log = "end => " 
+				+ Methods.conv_MillSec_to_TimeLabel(Methods.getMillSeconds_now());
+		
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
+		
+		// Log
+		msg_Log = "i_ary_done[0] => " + i_ary_done[0];
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
 		
 	}
 
@@ -298,6 +396,17 @@ public class MainActv extends Activity  implements OnClickListener {
 		
 	}//_Setup
 	
+	public int[] add_Array_java(int[] source) {
+		
+		int size = source.length;
+		
+		int[] ret = new int[1];
+		
+		ret[0] = size;
+		
+		return ret;
+		
+	}
 	
 
 }//public class MainActv extends Activity
