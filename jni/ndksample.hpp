@@ -51,6 +51,14 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_ndk_main_MainActv_msgFromNDK
   (JNIEnv *, jobject, jint);
 
+/*
+ * Class:     ndk_main_MainActv
+ * Method:    get_Number
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_ndk_main_MainActv_get_1Number
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

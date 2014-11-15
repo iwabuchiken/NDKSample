@@ -58,6 +58,8 @@ public class MainActv extends Activity  implements OnClickListener {
 
     public native String msgFromNDK(int count);
 	
+    public native int get_Number();
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -254,14 +256,22 @@ public class MainActv extends Activity  implements OnClickListener {
 		
 		_Setup__SetListener();
 		
-//		View cv = (View) findViewById(R.id.actv_main_cv_canvas);
-//		
-//		cv.setTag(Tags.ViewTags.CANVAS_MAIN);
-//		
-//		cv.setOnTouchListener(new V_OTL(this, (CV) cv));
-////		cv.setOnTouchListener(new V_OTL(this));
+		////////////////////////////////
+
+		// test
+
+		////////////////////////////////
+		_test();
 		
 	}//protected void onStart()
+
+	private void 
+	_test() {
+		// TODO Auto-generated method stub
+	
+		
+		
+	}
 
 	private void 
 	_Setup__SetListener() {
@@ -278,6 +288,12 @@ public class MainActv extends Activity  implements OnClickListener {
 	private void 
 	_Setup() {
 		// TODO Auto-generated method stub
+
+		// Log
+		String msg_Log = "number => " + get_Number();
+		Log.d("MainActv.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", msg_Log);
 		
 		
 	}//_Setup

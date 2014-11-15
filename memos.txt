@@ -10,3 +10,4 @@ ${env_var:JAVA_HOME}\bin\java.h
 // args
 -d jni -classpath bin/classes ${java_type_name}
 -d jni -classpath "bin/classes;C:\WORKS\Programs\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-10\*" ${java_type_name}
+-d jni -classpath "bin/classes;C:\WORKS\Programs\adt-bundle-windows-x86_64-20140702\sdk\platforms\android-10\*" ndk.main.MainActv
